@@ -17,10 +17,16 @@ require("lazy").setup({
 
     { import = "lazyvim.plugins.extras.lang.go" },
 
+    { import = "lazyvim.plugins.extras.lang.python" },
+
     { import = "lazyvim.plugins.extras.lang.markdown" },
 
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.yaml" },
+    { import = "lazyvim.plugins.extras.lang.docker" },
+
+    -- C/C++
+    -- { import = "lazyvim.plugins.extras.lang.clangd" },
 
     { import = "plugins" },
   },
