@@ -30,7 +30,7 @@ autoload -Uz compinit && compinit
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="./local/bin:$PATH"
+export PATH="/home/zoumas/.local/bin:$PATH"
 
 # Keybindings
 bindkey -e # emacs mode
