@@ -30,7 +30,7 @@ autoload -Uz compinit && compinit
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="/home/zoumas/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Keybindings
 bindkey -e # emacs mode
@@ -65,7 +65,10 @@ eval "$(zoxide init --cmd cd zsh)"
 export EDITOR=nvim
 
 # Golang
-export GOBIN="/home/zoumas/.local/bin"
+export GOBIN="$HOME/.local/bin"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+# Source work related configuration.
+source "$HOME/.workrc"
