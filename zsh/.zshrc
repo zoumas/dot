@@ -56,8 +56,16 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
+alias ls='lsd'
 alias e='nvim'
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+export EDITOR=nvim
+
+# Golang
+export GOBIN="/home/zoumas/.local/bin"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
