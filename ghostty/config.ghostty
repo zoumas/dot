@@ -1,0 +1,15 @@
+theme = Catppuccin Mocha
+
+# Vim-like navigation (mirrors Ghostty's default arrow-key bindings)
+keybind = ctrl+alt+h=goto_split:left
+keybind = ctrl+alt+j=goto_split:down
+keybind = ctrl+alt+k=goto_split:up
+keybind = ctrl+alt+l=goto_split:right
+
+keybind = super+ctrl+shift+h=resize_split:left,10
+keybind = super+ctrl+shift+j=resize_split:down,10
+keybind = super+ctrl+shift+k=resize_split:up,10
+keybind = super+ctrl+shift+l=resize_split:right,10
+
+keybind = ctrl+shift+h=previous_tab
+keybind = ctrl+shift+l=next_tab
