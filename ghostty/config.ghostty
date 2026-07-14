@@ -1,4 +1,5 @@
 theme = Catppuccin Mocha
+font-size = 15
 
 # Vim-like navigation (mirrors Ghostty's default arrow-key bindings)
 keybind = ctrl+alt+h=goto_split:left
