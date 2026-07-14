@@ -17,7 +17,10 @@ Personal configuration files for my development environment.
   terminal emulator: Catppuccin Mocha theme and vim-like keybindings for split navigation, split
   resizing, and tab switching.
 
+- **[`hypr/`](hypr/README.md)** — [Hyprland](https://hyprland.org/) config (Lua-based), plus
+  hypridle, hyprlock (Catppuccin Mocha), and hyprpaper. See its README for dependencies and setup.
+
 ## Usage
 
 These files are meant to be symlinked into place (e.g. `~/.zshrc`, `~/.config/nvim`,
-`~/.config/ghostty/config`) rather than copied.
+`~/.config/ghostty/config`, `~/.config/hypr/`) rather than copied.
