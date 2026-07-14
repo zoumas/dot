@@ -38,6 +38,7 @@ Used by autostart, keybindings, and window rules in `hyprland.lua`:
 - [hyprlauncher](https://github.com/hyprland-community/hyprlauncher) — app launcher (`SUPER + R`)
   and clipboard picker menu
 - [ghostty](https://ghostty.org/) — terminal emulator (`SUPER + RETURN`)
+- [zen-browser](https://zen-browser.app/) — web browser (`SUPER + W`)
 - [dolphin](https://apps.kde.org/dolphin/) — file manager (`SUPER + E`)
 - [wlogout](https://github.com/ArtsyMacaw/wlogout) — logout/power menu (`SUPER + M`)
 - [hyprpicker](https://github.com/hyprwm/hyprpicker) — color picker (`SUPER + SHIFT + P`)

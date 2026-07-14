@@ -18,6 +18,7 @@ hl.monitor({
 local terminal = "ghostty"
 local fileManager = "dolphin"
 local menu = "hyprlauncher"
+local browser = "zen-browser"
 
 -------------------
 ---- AUTOSTART ----
@@ -200,6 +201,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("pidof wlogout || wlogout"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
