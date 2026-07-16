@@ -30,12 +30,15 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # history
-HISTSIZE=5000
+HISTSIZE=100000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 setopt appendhistory
 setopt sharehistory
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_reduce_blanks
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
@@ -61,6 +64,7 @@ alias cat='bat'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(gh completion -s zsh)"
+eval "$(atuin init zsh)"
 
 # env vars
 export PATH="$HOME/.local/bin:$PATH"

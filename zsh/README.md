@@ -13,15 +13,17 @@ tool integrations for fuzzy search, navigation, and file/diff viewing.
   one).
 - **Keybindings** — emacs mode (`bindkey -e`), with `^p`/`^n` bound to history search
   backward/forward.
-- **History** — 5000 entries, shared across sessions, deduplicated (`hist_ignore_dups`,
-  `hist_save_no_dups`, etc.), stored in `~/.zsh_history`.
+- **History** — 100000 entries, shared across sessions, timestamped (`extended_history`),
+  deduplicated (`hist_ignore_dups`, `hist_save_no_dups`, `hist_expire_dups_first`, etc.), stored
+  in `~/.zsh_history`. [atuin](https://atuin.sh) layers a searchable, context-aware history on
+  top and takes over Ctrl-R.
 - **Completion styling** — case-insensitive matching, `LS_COLORS`-aware listing, and `fzf-tab`
   previews: `eza` for directory completion (`cd`, `zoxide`), `bat` for file completion
   (`nvim`/`vim`/`cat`/`bat`).
 - **Aliases** — `ls`/`ll`/`la`/`lt` mapped to `eza` (with git status and directory grouping),
   `cat` mapped to `bat`.
-- **Shell integrations** — `fzf` keybindings/completion, `zoxide` (aliased to `cd`), and `gh`
-  shell completion.
+- **Shell integrations** — `fzf` keybindings/completion, `zoxide` (aliased to `cd`), `gh`
+  shell completion, and `atuin` (history search, bound to Ctrl-R, overriding fzf's default).
 - **fzf + fd** — `fd` backs fzf's file (`FZF_DEFAULT_COMMAND`/ctrl-t) and directory (alt-c)
   search, with `bat`/`eza` previews respectively.
 - **`MANPAGER`** — man pages rendered through `bat` for syntax highlighting and paging.
@@ -38,6 +40,7 @@ tool integrations for fuzzy search, navigation, and file/diff viewing.
 - [bat](https://github.com/sharkdp/bat) — `cat` replacement with syntax highlighting, also used
   as the man pager
 - [gh](https://cli.github.com/) — GitHub CLI, for shell completion
+- [atuin](https://atuin.sh) — searchable, context-aware shell history, replaces fzf's Ctrl-R
 
 ## Setup
 
@@ -49,3 +52,9 @@ tool integrations for fuzzy search, navigation, and file/diff viewing.
    ```
 
 3. Start a new shell. Zinit and its plugins install automatically on first run.
+4. Import existing shell history into atuin (one-time, only needed if `~/.zsh_history` has
+   entries you want to keep searchable):
+
+   ```sh
+   atuin import auto
+   ```
