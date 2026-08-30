@@ -6,10 +6,10 @@
 ------------------
 
 hl.monitor({
-    output   = "",
-    mode     = "preferred",
+    output   = "desc:Dell Inc. DELL U2724DE",
+    mode     = "2560x1440@120",
     position = "auto",
-    scale    = "auto",
+    scale    = 1,
 })
 
 ---------------------
@@ -78,11 +78,18 @@ hl.config({
 
 hl.config({
     input = {
-        kb_layout = "us",
+        kb_layout = "us,gr",
 
-        follow_mouse = 1,
-        sensitivity  = 0,
+        follow_mouse  = 1,
+        sensitivity   = 0,
+        repeat_rate   = 50,
+        repeat_delay  = 200,
     },
+})
+
+hl.device({
+    name         = "logitech-mx-master-3-1",
+    accel_profile = "flat",
 })
 
 ---------------------
@@ -94,6 +101,7 @@ local mod = "SUPER"
 hl.bind(mod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + R",      hl.dsp.exec_cmd(menu))
 hl.bind(mod .. " + E",      hl.dsp.exec_cmd(fileManager))
+hl.bind(mod .. " + SPACE",  hl.dsp.exec_cmd("hyprctl switchxkblayout all next"))
 hl.bind(mod .. " + Q",      hl.dsp.window.close())
 hl.bind(mod .. " + V",      hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + F",      hl.dsp.window.fullscreen({ action = "toggle", mode = "fullscreen" }))
