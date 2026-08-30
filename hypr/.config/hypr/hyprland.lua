@@ -20,6 +20,14 @@ local terminal    = "kitty"
 local menu        = "hyprlauncher"
 local fileManager = "dolphin"
 
+-------------------
+---- AUTOSTART ----
+-------------------
+
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hyprpaper")
+end)
+
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
