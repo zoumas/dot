@@ -17,11 +17,17 @@ Hyprland configuration: window manager, wallpaper daemon, and lock screen.
   time/date, and displays which keyboard layout (`EN`/`GR`) is currently
   active next to the password field.
 
+Autostart (in `hyprland.lua`'s `hyprland.start` hook) also launches
+`wayle shell` (see the `wayle` package) and `hyprpolkitagent`, a
+lightweight polkit authentication agent — without one, GUI apps that need
+privilege escalation (disk tools, NetworkManager actions, etc.) fail
+silently with no password prompt.
+
 ## Dependencies
 
 ```sh
 sudo pacman -S hyprland hyprpaper hyprlock hyprshot wl-clipboard \
-  playerctl wireplumber dolphin
+  playerctl wireplumber dolphin hyprpolkitagent
 ```
 
 Also needs a terminal (see the `ghostty` package) and an app launcher
