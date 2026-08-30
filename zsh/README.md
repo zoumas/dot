@@ -38,7 +38,7 @@ Shell configuration, modeled on
   for `Alt+C`'s directory preview. Same treatment for `fzf-tab` completions
   on `nvim`/`vim`/`cat`/`bat`.
 - `MANPAGER` renders man pages through `bat` instead of plain `less`
-  (requires `man-db`, not installed by default in this setup).
+  (requires `man-db`).
 - `gh` (GitHub CLI) shell completions.
 - A few extra history options beyond zensh's set:
   `extended_history` (timestamps), `hist_expire_dups_first`,
@@ -51,11 +51,9 @@ by eza/bat, and `vim`/`c` weren't used).
 ## Dependencies
 
 ```sh
-sudo pacman -S zsh git fzf zoxide atuin eza bat fd github-cli ttf-meslo-nerd
+sudo pacman -S zsh git fzf zoxide atuin eza bat fd github-cli man-db \
+  man-pages ttf-meslo-nerd
 ```
-
-Optional: `man-db` (`sudo pacman -S man-db man-pages`) to make the
-`MANPAGER` setting do anything.
 
 ## Setup
 

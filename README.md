@@ -46,12 +46,12 @@ dot/
 2. Install each package's dependencies — see the package's own README
    (linked in the table above) for the exact `pacman` command and any
    manual setup step (e.g. `hypr` needs a wallpaper symlink, `zsh` needs
-   `chsh`, `wayle` needs its systemd service enabled).
+   `chsh`).
 
 3. Symlink the packages you want:
 
    ```sh
-   stow hypr ghostty nvim wayle zsh
+   stow hypr ghostty nvim wayle zsh git
    ```
 
    Or symlink everything: `stow */`.
