@@ -16,7 +16,7 @@ hl.monitor({
 ---- MY PROGRAMS ----
 ---------------------
 
-local terminal    = "kitty"
+local terminal    = "ghostty"
 local menu        = "hyprlauncher"
 local fileManager = "dolphin"
 local browser     = "zen-browser"
