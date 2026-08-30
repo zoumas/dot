@@ -32,6 +32,17 @@ Shell configuration, modeled on
   syntax highlighting.
 - `zoxide`, with `cd` itself replaced by `zoxide init --cmd cd zsh` — `cd`
   is frecency-based, not just literal paths.
+- `fzf` tuned to use modern tools instead of its defaults: `fd` for listing
+  (`FZF_DEFAULT_COMMAND`/`FZF_CTRL_T_COMMAND`/`FZF_ALT_C_COMMAND`, hidden
+  files included, `.git` excluded), `bat` for `Ctrl+T`'s file preview, `eza`
+  for `Alt+C`'s directory preview. Same treatment for `fzf-tab` completions
+  on `nvim`/`vim`/`cat`/`bat`.
+- `MANPAGER` renders man pages through `bat` instead of plain `less`
+  (requires `man-db`, not installed by default in this setup).
+- `gh` (GitHub CLI) shell completions.
+- A few extra history options beyond zensh's set:
+  `extended_history` (timestamps), `hist_expire_dups_first`,
+  `hist_reduce_blanks`.
 
 Not carried over from zensh: the macOS Homebrew conditional block (dead
 code on Linux), and the plain `ls`/`vim`/`c` aliases (removed — superseded
@@ -40,8 +51,11 @@ by eza/bat, and `vim`/`c` weren't used).
 ## Dependencies
 
 ```sh
-sudo pacman -S zsh git fzf zoxide atuin eza bat ttf-meslo-nerd
+sudo pacman -S zsh git fzf zoxide atuin eza bat fd github-cli ttf-meslo-nerd
 ```
+
+Optional: `man-db` (`sudo pacman -S man-db man-pages`) to make the
+`MANPAGER` setting do anything.
 
 ## Setup
 
