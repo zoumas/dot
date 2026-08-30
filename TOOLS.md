@@ -36,6 +36,7 @@ dotfile).
 | `man-db` + `bat` | plain `man` | Man pages rendered with syntax highlighting (`MANPAGER`) |
 | [jq](https://github.com/jqlang/jq) | — | JSON query/processing |
 | [yq](https://github.com/mikefarah/yq) | — | Same idea as `jq`, for YAML |
+| [glow](https://github.com/charmbracelet/glow) | — | Renders Markdown in the terminal (handy for this repo's many `README.md`s) |
 
 ## Git & GitHub
 
@@ -62,5 +63,5 @@ dotfile).
 | [hyprshot](https://github.com/Gustash/hyprshot) | Screenshots (`SUPER+S`/`Shift+S`/`Ctrl+S`) |
 
 Standalone tools (`tealdeer`, `yq`, `dust`, `duf`, `sd`, `bashtop`,
-`fastfetch`) aren't referenced by any tracked config — they're just
-installed and used directly from the shell.
+`fastfetch`, `glow`) aren't referenced by any tracked config — they're
+just installed and used directly from the shell.
