@@ -12,8 +12,10 @@ Personal dotfiles for an Arch Linux + Hyprland desktop, managed with
 | [`nvim`](nvim/README.md) | Neovim, based on the LazyVim starter |
 | [`wayle`](wayle/README.md) | Desktop shell (bar) |
 | [`zsh`](zsh/README.md) | Shell, based on zensh, plus atuin/eza/bat |
+| [`git`](git/README.md) | Git config: delta pager, zdiff3, sane defaults |
 
-All five share a consistent Gruvbox Material theme.
+The desktop-facing packages (`hypr`, `ghostty`, `nvim`, `wayle`, `zsh`)
+share a consistent Gruvbox Material theme.
 
 ## Layout
 
