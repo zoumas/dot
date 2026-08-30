@@ -19,6 +19,7 @@ hl.monitor({
 local terminal    = "kitty"
 local menu        = "hyprlauncher"
 local fileManager = "dolphin"
+local browser     = "zen-browser"
 
 -------------------
 ---- AUTOSTART ----
@@ -109,6 +110,7 @@ local mod = "SUPER"
 hl.bind(mod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + R",      hl.dsp.exec_cmd(menu))
 hl.bind(mod .. " + E",      hl.dsp.exec_cmd(fileManager))
+hl.bind(mod .. " + W",      hl.dsp.exec_cmd(browser))
 hl.bind(mod .. " + SPACE",  hl.dsp.exec_cmd("hyprctl switchxkblayout all next"))
 hl.bind(mod .. " + Q",      hl.dsp.window.close())
 hl.bind(mod .. " + V",      hl.dsp.window.float({ action = "toggle" }))
