@@ -29,6 +29,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("wayle shell")
     hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")
+    hl.exec_cmd("wl-paste --watch cliphist store")
 end)
 
 -------------------------------
@@ -117,6 +118,7 @@ hl.bind(mod .. " + SPACE",  hl.dsp.exec_cmd("hyprctl switchxkblayout all next"),
 hl.bind(mod .. " + ESCAPE", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mod .. " + Q",      hl.dsp.window.close())
 hl.bind(mod .. " + V",      hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mod .. " + SHIFT + V", hl.dsp.exec_cmd("cliphist list | hyprlauncher -m | cliphist decode | wl-copy"))
 hl.bind(mod .. " + F",      hl.dsp.window.fullscreen({ action = "toggle", mode = "fullscreen" }))
 hl.bind(mod .. " + P",      hl.dsp.window.pseudo())
 hl.bind(mod .. " + T",      hl.dsp.layout("togglesplit"))

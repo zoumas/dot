@@ -18,16 +18,18 @@ Hyprland configuration: window manager, wallpaper daemon, and lock screen.
   active next to the password field.
 
 Autostart (in `hyprland.lua`'s `hyprland.start` hook) also launches
-`wayle shell` (see the `wayle` package) and `hyprpolkitagent`, a
-lightweight polkit authentication agent — without one, GUI apps that need
-privilege escalation (disk tools, NetworkManager actions, etc.) fail
-silently with no password prompt.
+`wayle shell` (see the `wayle` package), `hyprpolkitagent` — a lightweight
+polkit authentication agent, without which GUI apps that need privilege
+escalation (disk tools, NetworkManager actions, etc.) fail silently with
+no password prompt — and `wl-paste --watch cliphist store`, which feeds
+every copy into `cliphist`'s clipboard history (`SUPER+Shift+V` to browse
+and re-copy an entry via `hyprlauncher`'s dmenu mode).
 
 ## Dependencies
 
 ```sh
 sudo pacman -S hyprland hyprpaper hyprlock hyprshot wl-clipboard \
-  playerctl wireplumber dolphin hyprpolkitagent
+  playerctl wireplumber dolphin hyprpolkitagent cliphist
 ```
 
 Also needs a terminal (see the `ghostty` package) and an app launcher
