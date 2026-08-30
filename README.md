@@ -17,6 +17,9 @@ Personal dotfiles for an Arch Linux + Hyprland desktop, managed with
 The desktop-facing packages (`hypr`, `ghostty`, `nvim`, `wayle`, `zsh`)
 share a consistent Gruvbox Material theme.
 
+See [`TOOLS.md`](TOOLS.md) for a reference list of the CLI tools this
+setup relies on, including a few standalone ones not tied to any package.
+
 ## Layout
 
 Each top-level directory is a Stow "package" whose contents mirror `$HOME`.
