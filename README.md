@@ -12,10 +12,10 @@ dot/
 ├── bash/
 │   ├── .bashrc
 │   └── .bash_profile
-└── kitty/
+└── ghostty/
     └── .config/
-        └── kitty/
-            └── kitty.conf
+        └── ghostty/
+            └── config
 ```
 
 ## Usage
