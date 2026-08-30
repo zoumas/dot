@@ -29,11 +29,15 @@ and re-copy an entry via `hyprlauncher`'s dmenu mode).
 
 ```sh
 sudo pacman -S hyprland hyprpaper hyprlock hyprshot wl-clipboard \
-  playerctl wireplumber dolphin hyprpolkitagent cliphist
+  playerctl wireplumber dolphin hyprpolkitagent cliphist rofimoji wtype
 ```
 
 Also needs a terminal (see the `ghostty` package) and an app launcher
 (`hyprlauncher`, referenced by `SUPER+R`).
+
+`SUPER+.` opens an emoji picker via `rofimoji` (using `wofi` as the
+selector, already installed) and types the chosen emoji directly into
+the focused window via `wtype`.
 
 ## Setup
 

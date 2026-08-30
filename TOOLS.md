@@ -61,6 +61,7 @@ dotfile).
 | `playerctl` | Media playback control (`SUPER+F7-F9`) |
 | `wireplumber` (`wpctl`) | Audio volume/mute control (`SUPER+F1-F3`) |
 | [hyprshot](https://github.com/Gustash/hyprshot) | Screenshots (`SUPER+S`/`Shift+S`/`Ctrl+S`) |
+| [rofimoji](https://github.com/fdw/rofimoji) + `wofi` + `wtype` | Emoji picker, `SUPER+.` (see `hypr` package) |
 
 Standalone tools (`tealdeer`, `yq`, `dust`, `duf`, `sd`, `bashtop`,
 `fastfetch`, `glow`) aren't referenced by any tracked config — they're
