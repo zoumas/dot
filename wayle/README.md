@@ -33,12 +33,14 @@ sudo pacman -S wayle
 
 ## Setup
 
-wayle ships its own systemd user service, but it isn't enabled by default.
-Enable it so the shell actually survives a reboot:
+wayle is autostarted by `hyprland.lua`'s `hl.on("hyprland.start", ...)`
+hook (see the `hypr` package), which runs `wayle shell` directly.
 
-```sh
-systemctl --user enable --now wayle.service
-```
-
-(Don't also add a Hyprland `exec-once` for this — it would double-launch
-wayle alongside the systemd service.)
+wayle also ships its own systemd user service
+(`WantedBy=graphical-session.target`), which looks like the "proper" way
+to autostart it — but on this system nothing ever activates
+`graphical-session.target`, so the service stays enabled yet
+permanently inactive. If your setup does activate that target (e.g. via
+`uwsm`), prefer `systemctl --user enable --now wayle.service` instead and
+remove the `hyprland.lua` autostart line, to avoid double-launching wayle
+from both mechanisms.
