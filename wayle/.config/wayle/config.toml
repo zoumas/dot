@@ -1,0 +1,37 @@
+# Wayle configuration file
+
+[[bar.layout]]
+monitor = "*"
+left = ["hyprland-workspaces"]
+center = ["media"]
+right = ["bluetooth", "network", "volume"]
+
+[modules.bluetooth]
+border-color = "accent"
+icon-bg-color = "accent"
+label-color = "accent"
+
+[modules.volume]
+border-color = "accent"
+icon-bg-color = "accent"
+label-color = "accent"
+
+[modules.media]
+border-color = "accent"
+icon-bg-color = "accent"
+label-color = "accent"
+
+[styling]
+theme-provider = "wayle"
+
+[styling.palette]
+bg = "#282828"
+surface = "#32302f"
+elevated = "#45403d"
+fg = "#d4be98"
+fg-muted = "#a89984"
+primary = "#fae5d8"
+red = "#ea6962"
+yellow = "#d8a657"
+green = "#a9b665"
+blue = "#7daea3"
