@@ -19,7 +19,7 @@ Shell configuration, modeled on
   `command-not-found`.
 - Emacs-style keybindings (`bindkey -e`), plus `Ctrl+P`/`Ctrl+N` for
   prefix history search and `Alt+W` to kill-region.
-- History: 5000 entries, deduped, shared across sessions.
+- History: 100000 entries, deduped, shared across sessions.
 - **[Atuin](https://github.com/atuin-sh/atuin)** — replaces plain shell
   history with a local SQLite database (command + cwd + exit code +
   duration). `Ctrl+R` opens its fuzzy-search TUI, Up-arrow searches inline
