@@ -1,3 +1,7 @@
 *.swp
 *~
 .DS_Store
+
+# wayle regenerates these for editor validation on every start
+wayle/.config/wayle/schema.json
+wayle/.config/wayle/themes/schema.json
