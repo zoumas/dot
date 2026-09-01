@@ -5,9 +5,19 @@
 ---- MONITORS ----
 ------------------
 
+-- Desktop: forced 120Hz, matched by description so it survives being
+-- replugged into a different port.
 hl.monitor({
     output   = "desc:Dell Inc. DELL U2724DE",
     mode     = "2560x1440@120",
+    position = "auto",
+    scale    = 1,
+})
+
+-- Laptop panel. Native pixels; Hyprland's auto-detected 1.5 was too large.
+hl.monitor({
+    output   = "eDP-1",
+    mode     = "1920x1200@60",
     position = "auto",
     scale    = 1,
 })
