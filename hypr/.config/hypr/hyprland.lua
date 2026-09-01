@@ -175,11 +175,31 @@ hl.bind(mod .. " + S",        hl.dsp.exec_cmd("hyprshot -m region -o " .. screen
 hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m output -o " .. screenshotDir))
 hl.bind(mod .. " + CTRL + S", hl.dsp.exec_cmd("hyprshot -m window -m active -o " .. screenshotDir))
 
--- Media / volume keys (SUPER + F-row; the Glove80 has no XF86 multimedia keys)
-hl.bind(mod .. " + F1", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),               { repeating = true })
-hl.bind(mod .. " + F2", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),                { repeating = true })
-hl.bind(mod .. " + F3", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),           { repeating = true })
-hl.bind(mod .. " + F7", hl.dsp.exec_cmd("playerctl previous"))
-hl.bind(mod .. " + F8", hl.dsp.exec_cmd("playerctl play-pause"))
-hl.bind(mod .. " + F9", hl.dsp.exec_cmd("playerctl next"))
-hl.bind(mod .. " + F10", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
+-- Media / volume. Bound twice, to the same commands:
+--   * SUPER + F-row, because the desktop's Glove80 has no XF86 media keys.
+--   * The XF86 keys themselves, which the laptop keyboard does have.
+-- Binding a key the current keyboard never emits is harmless, so both
+-- machines share one set.
+local mute        = hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
+local volumeDown  = hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")
+local volumeUp    = hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+")
+local micMute     = hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle")
+local playPrev    = hl.dsp.exec_cmd("playerctl previous")
+local playPause   = hl.dsp.exec_cmd("playerctl play-pause")
+local playNext    = hl.dsp.exec_cmd("playerctl next")
+
+hl.bind(mod .. " + F1",  mute,       { repeating = true })
+hl.bind(mod .. " + F2",  volumeDown, { repeating = true })
+hl.bind(mod .. " + F3",  volumeUp,   { repeating = true })
+hl.bind(mod .. " + F7",  playPrev)
+hl.bind(mod .. " + F8",  playPause)
+hl.bind(mod .. " + F9",  playNext)
+hl.bind(mod .. " + F10", micMute)
+
+hl.bind("XF86AudioMute",        mute,       { repeating = true, locked = true })
+hl.bind("XF86AudioLowerVolume", volumeDown, { repeating = true, locked = true })
+hl.bind("XF86AudioRaiseVolume", volumeUp,   { repeating = true, locked = true })
+hl.bind("XF86AudioMicMute",     micMute,    { locked = true })
+hl.bind("XF86AudioPrev",        playPrev,   { locked = true })
+hl.bind("XF86AudioPlay",        playPause,  { locked = true })
+hl.bind("XF86AudioNext",        playNext,   { locked = true })

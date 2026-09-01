@@ -4,12 +4,16 @@ Hyprland configuration: window manager, wallpaper daemon, and lock screen.
 
 ## Contents
 
-- **`hyprland.lua`** — the compositor itself. Monitor setup (forced 120Hz on
-  the Dell U2724DE, matched by description so it survives being replugged
-  into a different port), keyboard-driven keybindings (vim-style `hjkl` for
-  focus/move/resize, workspaces, screenshots via `hyprshot`, media/volume on
-  `SUPER+F1-F10` since the Glove80 has no XF86 keys), and minimal
-  look-and-feel (dwindle layout, small gaps, no shadows).
+- **`hyprland.lua`** — the compositor itself. Monitor setup (the desktop's
+  Dell U2724DE forced to 120Hz and matched by description so it survives
+  being replugged into a different port; the laptop's `eDP-1` pinned to
+  native scale, since Hyprland's own DPI detection picks a too-large 1.5),
+  keyboard-driven keybindings (vim-style `hjkl` for focus/move/resize,
+  workspaces, screenshots via `hyprshot`, media/volume on both `SUPER+F1-F10`
+  and the `XF86Audio*` keys — the desktop's Glove80 has no XF86 keys, the
+  laptop keyboard does, and binding a key the current keyboard never emits
+  is harmless), and minimal look-and-feel (dwindle layout, small gaps, no
+  shadows).
 - **`hyprpaper.conf`** — wallpaper daemon config. Deliberately points at a
   generic, machine-local path (`~/Pictures/wallpaper`) instead of a specific
   image file — see **Setup** below.
