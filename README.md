@@ -54,10 +54,16 @@ dot/
 3. Symlink the packages you want:
 
    ```sh
-   stow hypr ghostty nvim wayle zsh git
+   stow -t ~ hypr ghostty nvim wayle zsh git
    ```
 
-   Or symlink everything: `stow */`.
+   Or symlink everything: `stow -t ~ */`.
+
+   `-t ~` is required. Stow defaults its target to the *parent* of the
+   directory it's run from, which is only `$HOME` when the repo is cloned
+   directly into `$HOME`. This one lives under `~/work/repos/...`, so
+   without `-t ~` stow would link the packages into
+   `~/work/repos/github.com/zoumas/` instead.
 
 4. Reload/restart the relevant app (`hyprctl reload`, a new terminal, etc.)
    and follow any package-specific first-run steps (LazyVim installing
@@ -68,26 +74,29 @@ dot/
 Symlink a package into `$HOME` (run from the repo root):
 
 ```sh
-stow <package>
+stow -t ~ <package>
 ```
 
 Remove a package's symlinks:
 
 ```sh
-stow -D <package>
+stow -D -t ~ <package>
 ```
 
 Re-sync after changing a package's contents:
 
 ```sh
-stow -R <package>
+stow -R -t ~ <package>
 ```
+
+Add `-n -v` to any of these to see what stow would do without touching
+the filesystem.
 
 ## Adding a new config
 
 1. Create `<package>/` mirroring the path relative to `$HOME`
    (e.g. `nvim/.config/nvim/init.lua`).
 2. Move the real file into that path.
-3. Run `stow <package>` to symlink it back into place.
+3. Run `stow -t ~ <package>` to symlink it back into place.
 4. Add a `<package>/README.md` describing what it provides and any
    dependencies/setup steps, and link it from the table above.
