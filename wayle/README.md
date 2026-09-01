@@ -7,13 +7,13 @@ shell (bar, etc.) used alongside Hyprland.
 
 - **`config.toml`**:
   - Bar layout: workspaces on the left, the media player centered, and
-    bluetooth/network/volume on the right. Battery and microphone are
-    deliberately left out — this machine is a desktop with no battery, and
-    microphone/volume read as redundant.
-  - Module colors: bluetooth/volume/media are pinned to the `accent` token
-    (they default to blue/red/blue respectively) so every module matches
-    the workspace indicator and network module, which already default to
-    `accent`.
+    battery/bluetooth/network/volume on the right. The microphone module is
+    deliberately left out — it reads as redundant next to volume. Battery
+    is inert on a desktop, so the same layout works on both machines.
+  - Module colors: battery/bluetooth/volume/media are pinned to the `accent`
+    token (they default to yellow/blue/red/blue respectively) so every module
+    matches the workspace indicator and network module, which already default
+    to `accent`.
   - Styling: a static Gruvbox Material palette (`theme-provider = "wayle"`)
     matching `ghostty`/`nvim`, with the accent color lightened well past
     the base Gruvbox orange into a soft cream (`#d4be98`).
