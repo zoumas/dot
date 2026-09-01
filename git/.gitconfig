@@ -21,6 +21,9 @@
 	colorMoved = default
 	algorithm = histogram
 
+[url "git@github.com:"]
+	insteadOf = https://github.com
+
 [init]
 	defaultBranch = main
 
@@ -38,3 +41,8 @@
 
 [commit]
 	verbose = true
+
+# Machine-local overrides: work identity, host-specific url rewrites.
+# Untracked, and silently skipped if the file does not exist.
+[include]
+	path = ~/.gitconfig.local

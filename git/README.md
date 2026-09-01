@@ -7,6 +7,9 @@ Git configuration.
 `.gitconfig` sets:
 
 - **Identity** — `user.name`/`user.email`.
+- `url."git@github.com:".insteadOf` — https GitHub clone URLs are rewritten
+  to SSH, so `git clone https://github.com/...` uses the SSH key rather than
+  asking for credentials.
 - **[delta](https://github.com/dandavison/delta)** as the pager for both
   `git diff`/`git log -p` (`core.pager`) and `git add -p`
   (`interactive.diffFilter`), with side-by-side view, line numbers, and
@@ -30,6 +33,24 @@ Git configuration.
   rebases).
 - `commit.verbose = true` — the diff being committed is shown inside the
   commit-message editor.
+
+## Machine-local overrides
+
+The last line of `.gitconfig` is:
+
+```gitconfig
+[include]
+	path = ~/.gitconfig.local
+```
+
+That file is **not** tracked here — it holds whatever is specific to one
+machine or one employer: work identity, extra `insteadOf` rewrites for hosts
+reached through a work SSH key, and so on. Keeping it out of git means the
+repo stays portable and no internal hostnames end up in a public history.
+
+Git ignores a missing `[include]` path, so the same tracked config works
+unchanged on a machine that has no such file. Because the include is last,
+anything it sets overrides the values above it.
 
 ## Dependencies
 
