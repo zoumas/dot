@@ -156,6 +156,28 @@ hl.bind(mod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 
+-- Monitors: there are only ever two, and workspaces are not duplicated across
+-- them, so a single "go to the other screen" key beats directional binds.
+local function otherMonitor()
+    local active = hl.get_active_monitor()
+    for _, m in ipairs(hl.get_monitors()) do
+        if m.id ~= active.id then
+            return m
+        end
+    end
+    return active
+end
+
+-- Focus other monitor: mod + tab
+hl.bind(mod .. " + TAB", function()
+    hl.dispatch(hl.dsp.focus({ monitor = otherMonitor().id }))
+end)
+
+-- Send window to other monitor: mod + shift + tab
+hl.bind(mod .. " + SHIFT + TAB", function()
+    hl.dispatch(hl.dsp.window.move({ monitor = otherMonitor().id }))
+end)
+
 -- Resize window: mod + ctrl + hjkl
 local resizeStep = 40
 hl.bind(mod .. " + CTRL + H", hl.dsp.window.resize({ x = -resizeStep, y = 0,           relative = true }))
