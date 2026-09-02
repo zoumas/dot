@@ -18,7 +18,16 @@ hl.monitor({
 hl.monitor({
     output   = "eDP-1",
     mode     = "1920x1200@60",
-    position = "auto",
+    position = "0x0",
+    scale    = 1,
+})
+
+-- Laptop-docked Dell, mounted physically above the laptop panel. Centered
+-- over the 1920px-wide panel: x = (1920 - 2560) / 2 = -320, y = -1440.
+hl.monitor({
+    output   = "desc:Dell Inc. DELL U2520D 9Y7S823",
+    mode     = "2560x1440@59.95",
+    position = "-320x-1440",
     scale    = 1,
 })
 
