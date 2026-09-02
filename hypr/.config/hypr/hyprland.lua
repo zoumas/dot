@@ -169,12 +169,12 @@ local function otherMonitor()
 end
 
 -- Focus other monitor: mod + tab
-hl.bind(mod .. " + TAB", function()
+hl.bind(mod .. " + Tab", function()
     hl.dispatch(hl.dsp.focus({ monitor = otherMonitor().id }))
 end)
 
 -- Send window to other monitor: mod + shift + tab
-hl.bind(mod .. " + SHIFT + TAB", function()
+hl.bind(mod .. " + SHIFT + Tab", function()
     hl.dispatch(hl.dsp.window.move({ monitor = otherMonitor().id }))
 end)
 
