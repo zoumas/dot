@@ -18,6 +18,11 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- LazyVim extras: order matters here, dap/test core must load before
+    -- lang extras that hook into them (see LazyVim docs on extras)
+    { import = "lazyvim.plugins.extras.dap.core" },
+    { import = "lazyvim.plugins.extras.test.core" },
+    { import = "lazyvim.plugins.extras.lang.go" },
     -- import/override with your plugins
     { import = "plugins" },
   },

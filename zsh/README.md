@@ -43,6 +43,9 @@ Shell configuration, modeled on
 - A few extra history options beyond zensh's set:
   `extended_history` (timestamps), `hist_expire_dups_first`,
   `hist_reduce_blanks`.
+- `GOBIN=$HOME/.local/bin`, with `~/.local/bin` prepended to `PATH` — Go
+  binaries from `go install` (e.g. `gopls`) land there instead of the
+  default `~/go/bin`, alongside other user-local binaries.
 
 Not carried over from zensh: the macOS Homebrew conditional block (dead
 code on Linux), and the plain `ls`/`vim`/`c` aliases (removed — superseded

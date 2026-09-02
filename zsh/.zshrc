@@ -79,6 +79,11 @@ alias cat='bat'
 # Env vars
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+# Go: land `go install` binaries in ~/.local/bin alongside other user
+# binaries, instead of the default ~/go/bin
+export GOBIN="$HOME/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"
+
 # fzf: use fd for listing, bat/eza for previews
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
