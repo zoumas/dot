@@ -20,6 +20,12 @@ Hyprland configuration: window manager, wallpaper daemon, and lock screen.
 - **`hyprlock.conf`** — lock screen. Matches the desktop theme, shows the
   time/date, and displays which keyboard layout (`EN`/`GR`) is currently
   active next to the password field.
+- **`.luarc.json`** — points `lua_ls` (the Neovim Lua LSP) at
+  `/usr/share/hypr/stubs/hl.meta.lua`, the type stub Hyprland itself ships
+  for its Lua config API, and declares `hl` as a known global. Without
+  this, editing `hyprland.lua` reports every `hl.*` call as an "Undefined
+  global `hl`" diagnostic; with it, you also get real autocomplete/type
+  info for the whole `hl.*` API.
 
 Autostart (in `hyprland.lua`'s `hyprland.start` hook) also launches
 `wayle shell` (see the `wayle` package), `hyprpolkitagent` — a lightweight
