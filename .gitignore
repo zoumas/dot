@@ -5,3 +5,8 @@
 # wayle regenerates these for editor validation on every start
 wayle/.config/wayle/schema.json
 wayle/.config/wayle/themes/schema.json
+
+# Machine-local git identities — work name/email, never published.
+# Live in $HOME today; ignored here in case they are ever stowed into the repo.
+.gitconfig-sycada
+.gitconfig.local

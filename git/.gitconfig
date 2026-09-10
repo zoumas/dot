@@ -46,3 +46,8 @@
 # Untracked, and silently skipped if the file does not exist.
 [include]
 	path = ~/.gitconfig.local
+
+# Work repos get the Sycada identity instead of the personal one above.
+# Trailing slash makes the condition cover every repo below that directory.
+[includeIf "gitdir:~/work/repos/bitbucket.org/sycada/"]
+	path = ~/.gitconfig-sycada
