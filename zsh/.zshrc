@@ -96,3 +96,9 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(atuin init zsh)"
 eval "$(gh completion -s zsh)"
+
+# ssh-agent: point at the socket-activated systemd user agent.
+# Skipped when SSH_AUTH_SOCK is already a live socket (e.g. a forwarded agent).
+if [[ ! -S "$SSH_AUTH_SOCK" && -n "$XDG_RUNTIME_DIR" ]]; then
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
