@@ -31,6 +31,15 @@ hl.monitor({
 	scale = 1,
 })
 
+-- Office Dell, mounted physically above the laptop panel. Same 1920px width
+-- as the panel, so x = 0 and y = -1080.
+hl.monitor({
+	output = "desc:Dell Inc. DELL P2422HE BV8Z8L3",
+	mode = "1920x1080@60",
+	position = "0x-1080",
+	scale = 1,
+})
+
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
