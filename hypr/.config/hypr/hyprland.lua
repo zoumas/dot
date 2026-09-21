@@ -127,6 +127,16 @@ hl.config({
 	},
 })
 
+-- Laptop's built-in keyboard: Caps Lock acts as Escape. Scoped to this device
+-- so the Glove80, which does its own remapping in firmware, is untouched.
+-- kb_layout is repeated because a device section does not inherit the global
+-- kb_* values once any of them is set here.
+hl.device({
+	name = "at-translated-set-2-keyboard",
+	kb_layout = "us,gr",
+	kb_options = "caps:escape",
+})
+
 hl.device({
 	name = "logitech-mx-master-3-1",
 	accel_profile = "flat",
