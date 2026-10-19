@@ -24,8 +24,9 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 
-[url "git@bitbucket.org:"]
+[url "git@ssh.bitbucket.org:"]
 	insteadOf = https://bitbucket.org/
+	insteadOf = git@bitbucket.org:
 
 [init]
 	defaultBranch = main
