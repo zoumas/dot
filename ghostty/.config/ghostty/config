@@ -2,3 +2,4 @@ theme = Gruvbox Material Dark
 font-size = 15
 confirm-close-surface = false
 mouse-hide-while-typing = true
+keybind = ctrl+enter=unbind
