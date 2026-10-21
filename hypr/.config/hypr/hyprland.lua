@@ -40,6 +40,15 @@ hl.monitor({
 	scale = 1,
 })
 
+-- Living-room TV over HDMI, to the right of the laptop panel. Add
+-- `mirror = "eDP-1"` to duplicate the laptop screen instead.
+hl.monitor({
+	output = "desc:Vestel Elektronik Sanayi ve Ticaret A. S. 43FHD_LCD_TV",
+	mode = "1920x1080@60",
+	position = "1920x0",
+	scale = 1,
+})
+
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
