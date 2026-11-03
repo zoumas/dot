@@ -1,0 +1,23 @@
+# Runs only the fieldalignment size check. Neovim runs this beside the
+# project's own golangci-lint config, so projects whose committed config does
+# not enable fieldalignment still report padded structs in the editor.
+version: "2"
+
+run:
+  # Print paths relative to the working directory. The default, "cfg", is
+  # relative to this file, which resolves through the stow symlink.
+  relative-path-mode: wd
+
+linters:
+  default: none
+  enable:
+    - govet
+  settings:
+    govet:
+      disable-all: true
+      enable:
+        - fieldalignment
+  exclusions:
+    rules:
+      - linters: [govet]
+        text: "leading bytes of pointer data"

@@ -13,6 +13,7 @@ Personal dotfiles for an Arch Linux + Hyprland desktop, managed with
 | [`wayle`](wayle/README.md) | Desktop shell (bar) |
 | [`zsh`](zsh/README.md) | Shell, based on zensh, plus atuin/eza/bat |
 | [`git`](git/README.md) | Git config: delta pager, zdiff3, sane defaults |
+| [`golangci`](golangci/README.md) | golangci-lint defaults, with struct field alignment checks |
 
 The desktop-facing packages (`hypr`, `ghostty`, `nvim`, `wayle`, `zsh`)
 share a consistent Gruvbox Material theme.

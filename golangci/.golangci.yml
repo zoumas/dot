@@ -1,0 +1,21 @@
+# Personal default config. golangci-lint uses it only in a project with no
+# .golangci.yml of its own; a project config replaces it, it is never merged.
+version: "2"
+
+run:
+  # Print paths relative to the working directory. The default, "cfg", is
+  # relative to this file, which resolves through the stow symlink.
+  relative-path-mode: wd
+
+linters:
+  default: standard
+  settings:
+    govet:
+      enable:
+        - fieldalignment
+  exclusions:
+    rules:
+      # fieldalignment reports two things: wasted bytes from padding, and
+      # pointer ordering (how far the GC scans). Keep only the size reports.
+      - linters: [govet]
+        text: "leading bytes of pointer data"
